@@ -1,6 +1,7 @@
 {
   "hosting": {
     "site": "moviesvault",
+    "cleanUrls": true,
     "public": ".",
     "ignore": [
       "firebase.json",

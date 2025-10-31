@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading...</title>
+  <link rel="stylesheet" href="css/watch.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Movies<span>Vault</span></div>
+
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Movies</a>
+      <a href="#">Series</a>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search movies..." id="search-input" />
+      <button>🔍</button>
+    </div>
+
+    <div id="search-suggestions" class="suggestions"></div>
+
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <!-- Movie Info -->
+  <section class="movie-info">
+    <div class="poster">
+      <img />
+    </div>
+    <div class="details">
+      <h1></h1>
+      <div class="tags">
+
+      </div>
+      <ul>
+        <li><b>Year:</b> </li>
+        <li><b>Runtime:</b> </li>
+        <li><b>Rating:</b> </li>
+        <li><b>Country:</b> </li>
+        <li><b>Genre:</b> </li>
+        <li><b>Release Date:</b> </li>
+        <li><b>Production:</b> </li>
+        <li><b>Cast:</b> </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Episode List -->
+  <section class="links">
+    <h2>Direct Links</h2>
+    <div class="direct-link-list">
+
+    </div>
+  </section>
+
+  <!-- Video Player Section -->
+  <section class="player-section">
+    <iframe id="player" width="800" height="450" frameborder="0" referrerpolicy="no-referrer" loading="lazy"
+      style="border-radius: 8px; overflow: hidden;">
+    </iframe>
+  </section>
+
+
+  <!-- Episode List -->
+  <!--<section class="episodes">
+    <h2>Season 1</h2>
+    <div class="episode-list">
+      <button class="active">Episode 1: Freedom Day</button>
+      <button>Episode 2: Holston’s Pick</button>
+      <button>Episode 3: Machines</button>
+      <button>Episode 4: Truth</button>
+      <button>Episode 5: The Janitor’s Boy</button>
+      <button>Episode 6: The Relic</button>
+    </div>
+  </section>-->
+
+  <!-- You may also like -->
+  <section class="recommendations">
+    <h2>You may also like</h2>
+    <div class="rec-grid">
+      <div class="card"><img>
+        <p></p>
+      </div>
+      <div class="card"><img>
+        <p></p>
+      </div>
+      <div class="card"><img>
+        <p></p>
+      </div>
+      <div class="card"><img>
+        <p></p>
+      </div>
+      <div class="card"><img>
+        <p></p>
+      </div>
+      <div class="card"><img>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comments -->
+  <section class="comments" style="display: none;">
+    <h2>Comments</h2>
+    <div class="comment-box">
+      <input type="text" id="commentInput" placeholder="Write your comment here..." />
+      <button id="addComment">Post</button>
+    </div>
+    <ul id="commentList"></ul>
+  </section>
+
+  <script type="module" src="js/watch.js"></script>
+</body>
+
+</html>

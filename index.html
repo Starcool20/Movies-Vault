@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieHub</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <!-- 🔝 Navbar -->
+  <header class="navbar">
+    <div class="logo">Movies<span>Vault</span></div>
+
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Movies</a>
+      <a href="#">Series</a>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search movies..." id="search-input" />
+      <button>🔍</button>
+    </div>
+
+    <div id="search-suggestions" class="suggestions"></div>
+
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <!-- 🎥 Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2></h2>
+      <div class="tags">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p></p>
+      <div class="hero-buttons">
+        <button class="btn-primary">▶ Watch Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!--Top Rated Sections -->
+  <section class="section">
+    <h3>Top Rated</h3>
+    <div class="movie-row">
+      <div class="movie-card small"></div>
+      <div class="movie-card small"></div>
+      <div class="movie-card small"></div>
+      <div class="movie-card small"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h3>Trending</h3>
+      <a href="movie-lists.html" class="view-all">View all →</a>
+    </div>
+    <div class="movie-row">
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h3>Upcoming</h3>
+      <a href="movie-lists.html" class="view-all">View all →</a>
+    </div>
+    <div class="movie-row">
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h3>Popular</h3>
+      <a href="movie-lists.html" class="view-all">View all →</a>
+    </div>
+    <div class="movie-row">
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h3>Now Playing</h3>
+      <a href="movie-lists.html" class="view-all">View all →</a>
+    </div>
+    <div class="movie-row">
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+      <div class="movie-card"></div>
+    </div>
+  </section>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+<script type="module" src="js/scripts.js"></script>
+</body>
+</html>

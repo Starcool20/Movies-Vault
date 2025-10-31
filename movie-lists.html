@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View All - Movies</title>
+  <link rel="stylesheet" href="css/movie-lists.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Movies<span>Vault</span></div>
+
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Movies</a>
+      <a href="#">Series</a>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search movies..." id="search-input" />
+      <button>🔍</button>
+    </div>
+
+    <div id="search-suggestions" class="suggestions"></div>
+
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <main class="content">
+    <h1 class="page-title"></h1>
+
+    <div class="movie-list">
+      <!-- Movie Item -->
+      <div class="movie-item">
+        <img />
+        <div class="movie-info">
+          <h2></h2>
+          <p class="meta"></p>
+          <p class="desc">
+          </p>
+          <button class="watch-btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="movie-item">
+        <img />
+        <div class="movie-info">
+          <h2></h2>
+          <p class="meta"></p>
+          <p class="desc">
+          </p>
+          <button class="watch-btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="movie-item">
+        <img />
+        <div class="movie-info">
+          <h2></h2>
+          <p class="meta"></p>
+          <p class="desc">
+          </p>
+          <button class="watch-btn">Watch Now</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Floating Load More Button -->
+  <!-- Floating Load More Button -->
+<button class="load-more-pill">Load More ⟳</button>
+  <script type="module" src="js/movie-lists.js"></script>
+</body>
+
+</html>

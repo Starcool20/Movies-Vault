@@ -164,35 +164,35 @@ async function getNextMoviePage() {
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
     case 'top_rated':
       movieData = await getMovieTopRated(page.toString());
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
     case 'upcoming':
       movieData = await getMovieUpcoming(page.toString());
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
     case 'now_playing':
       movieData = await getMovieNowPlaying(page.toString());
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
     case 'movies':
       movieData = await getMovieNowPlaying(page.toString());
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
     case 'search':
       movieData = await getMovieSearch(searchValue, page.toString());
@@ -206,7 +206,7 @@ async function getNextMoviePage() {
       appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
-      loadFMorePill.innerHTML = "⟳ Load More";
+      loadMorePill.innerHTML = "⟳ Load More";
       break;
   }
   if (!movieData.results || movieData.results.length < 20) {

@@ -215,7 +215,7 @@ function populateDirectLinks() {
     // Set first one active
     if (index === 0) {
       btn.classList.add('active');
-      //iframe.src = url;
+      iframe.src = url;
     }
 
     // Click behavior

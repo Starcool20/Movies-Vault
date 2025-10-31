@@ -196,7 +196,7 @@ async function getNextMoviePage() {
       break;
     case 'search':
       movieData = await getMovieSearch(searchValue, page.toString());
-      appendMovies
+      appendMovies(movieData);
       loadMorePill.disabled = false;
       loadMorePill.classList.remove("loading");
       loadMorePill.innerHTML = "⟳ Load More";

@@ -11,7 +11,6 @@ export async function getHomeMovieData() {
 
     try {
         const res = await axios.request(options); // Wait for the response
-        console.log(res.data); // Access the data
         return res.data; // Optionally return it
     } catch (err) {
         console.error('❌ Error fetching movie data:', err);

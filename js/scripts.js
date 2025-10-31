@@ -45,8 +45,6 @@ function getImageSize() {
 }
 
 function renderData() {
-  console.log('Rendering movie data to the UI...');
-
   const movieRows = document.querySelectorAll(".movie-row");
   setHrefsClickListeners();
   renderHomeMovies(homeMovieData);

@@ -209,7 +209,6 @@ function populateDirectLinks() {
   const container = document.querySelector('.direct-link-list');
 
   Object.entries(directLinks.data).forEach(([label, url], index) => {
-    console.log(label);
     const btn = document.createElement('button');
     btn.textContent = label;
 

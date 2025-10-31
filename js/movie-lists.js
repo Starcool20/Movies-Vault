@@ -212,6 +212,7 @@ async function getNextMoviePage() {
   if (!movieData.results || movieData.results.length < 20) {
     loadMorePill.style.display = "none";
   }
+  setupWatchButtons();
 }
 
 function appendMovies(movieData) {

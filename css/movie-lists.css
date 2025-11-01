@@ -28,7 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 90%;
+  width: 95%;
   max-width: 1000px;
   margin: 0 auto 60px;
 }
@@ -100,7 +100,7 @@ body {
   color: #fff;
 }
 .menu-toggle {
-    display: block;
+    display: none;
   }
 
 /* 🔝 Navbar base style */
@@ -154,7 +154,7 @@ body {
 /* 📱 Responsive behavior */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: none;
   }
 
   .nav-links {

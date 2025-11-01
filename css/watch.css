@@ -291,7 +291,7 @@ body {
     animation: slideDown 0.3s ease forwards;
   }
   .menu-toggle {
-    display: block;
+    display: none;
   }
   .navbar {
     padding: 1rem 2rem;

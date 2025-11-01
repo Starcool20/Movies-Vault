@@ -298,3 +298,10 @@ document.querySelector(".search-bar button").addEventListener("click", event => 
   event.preventDefault();
   window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
 });
+
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
+  }
+});

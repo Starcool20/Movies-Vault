@@ -274,7 +274,7 @@ body {
 /* Mobile Devices */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: none;
   }
 
   .hero {
@@ -363,7 +363,7 @@ body {
 /* 📱 Responsive behavior */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: none;
   }
 
   .nav-links {

@@ -212,18 +212,12 @@ function populateDirectLinks() {
     const btn = document.createElement('button');
     btn.textContent = label;
 
-    // Set first one active
-    if (index === 0) {
-      btn.classList.add('active');
-      iframe.src = url;
-    }
-
     // Click behavior
     btn.addEventListener('click', () => {
       document.querySelectorAll('.direct-link-list button')
         .forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      iframe.src = url;
+      window.open(url, '_blank', 'noopener,noreferrer');
     });
 
     container.appendChild(btn);
@@ -239,4 +233,11 @@ function setClickListener(card, movieId) {
 document.querySelector(".search-bar button").addEventListener("click", event => {
   event.preventDefault();
   window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
+});
+
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
+  }
 });

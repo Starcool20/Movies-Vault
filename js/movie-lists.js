@@ -18,7 +18,7 @@ navLinks.forEach(link => {
 
     // Example actions:
     if (page === 'Home') {
-      window.location.reload();
+      window.location.href = "index.html";
     } else if (page === 'Movies') {
       window.location.href = "movie-lists.html?type=movies";
     } else if (page === 'Series') {
@@ -112,8 +112,8 @@ movieContainer.innerHTML = movieData.results
       .join(" • ");
 
     let overview = "";
-    if (size === "w342") {
-      overview = m.overview.slice(0, 30) + "...";
+    if (size < "w400") {
+      overview = m.overview.slice(0, 60) + "...";
     } else {
       overview = m.overview.slice(0, 150) + "...";
     }

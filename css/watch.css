@@ -28,6 +28,7 @@ body {
   font-weight: 700;
   color: #e50914;
 }
+
 .logo span {
   color: #fff;
 }
@@ -38,12 +39,14 @@ body {
   align-items: center;
   gap: 1.5rem;
 }
+
 .nav-links a {
   color: #ccc;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
   color: #e50914;
 }
@@ -64,19 +67,22 @@ body {
   border-radius: 25px;
   padding: 0.4rem 1rem;
 }
+
 .search-bar input {
   background: transparent;
   border: none;
   color: #fff;
   outline: none;
-  width: 150px;
+  width: 250px;
 }
+
 .search-bar input:active {
   background: transparent;
   border: none;
   color: #fff;
   outline: none;
 }
+
 .search-bar button {
   background: none;
   border: none;
@@ -88,16 +94,20 @@ body {
 /* Search suggestions dropdown */
 .suggestions {
   position: absolute;
-  top: 55px; /* space above */
-  right: 0; /* align to the right of the parent container */
+  top: 55px;
+  /* space above */
+  right: 0;
+  /* align to the right of the parent container */
   background: #222;
   border-radius: 8px;
-  width: 300px; /* match input width or adjust as needed */
+  width: 300px;
+  /* match input width or adjust as needed */
   color: #fff;
-  display: none; /* hide by default */
+  display: none;
+  /* hide by default */
   max-height: 300px;
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 100;
   padding: 4px 0;
 }
@@ -120,6 +130,7 @@ body {
   background: #000;
   margin-top: 10px;
 }
+
 #player {
   width: 100%;
   max-width: 100%;
@@ -134,31 +145,48 @@ body {
   background: #111;
   gap: 20px;
 }
-.poster img {
+
+.poster {
+  flex: 0 0 auto;
   width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster img {
+  width: 500px;
   max-width: 100%;
   border-radius: 20px;
+  
 }
+
 .details {
   flex: 1;
 }
+
 .details h1 {
   font-size: 2em;
   margin-bottom: 10px;
 }
+
 .tags span {
   background: #e50914;
   padding: 4px 10px;
   border-radius: 4px;
   margin-right: 8px;
 }
+
 .details ul {
   margin: 20px 0;
   list-style: none;
 }
+
 .details ul li {
   margin: 5px 0;
 }
+
 .fav-btn {
   background: #e50914;
   border: none;
@@ -169,19 +197,25 @@ body {
 }
 
 /* Episodes */
-.episodes, .links {
+.episodes,
+.links {
   background: #0d0d0d;
   padding: 40px;
 }
+
 .episodes h2 {
   margin-bottom: 15px;
 }
-.episode-list, .direct-link-list {
+
+.episode-list,
+.direct-link-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
 }
-.episode-list button, .direct-link-list button {
+
+.episode-list button,
+.direct-link-list button {
   padding: 12px;
   background: #1c1c1c;
   border: none;
@@ -189,8 +223,11 @@ body {
   color: #ccc;
   cursor: pointer;
 }
+
 .episode-list button:hover,
-.episode-list .active, .direct-link-list button:hover, .direct-link-list .active {
+.episode-list .active,
+.direct-link-list button:hover,
+.direct-link-list .active {
   background: #e50914;
   color: #fff;
 }
@@ -199,22 +236,26 @@ body {
 .recommendations {
   padding: 40px;
 }
+
 .rec-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
 }
+
 .card {
   background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
 }
+
 .card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
+
 .card p {
   padding: 10px;
   font-size: 0.9em;
@@ -225,12 +266,14 @@ body {
   padding: 40px;
   background: #111;
 }
+
 .comment-box {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .comment-box input {
   flex: 1 1 200px;
   padding: 10px;
@@ -239,6 +282,7 @@ body {
   color: white;
   border-radius: 5px;
 }
+
 .comment-box button {
   background: #e50914;
   border: none;
@@ -247,9 +291,11 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
 #commentList {
   list-style: none;
 }
+
 #commentList li {
   background: #1c1c1c;
   padding: 10px;
@@ -263,11 +309,19 @@ body {
     flex-direction: column;
     padding: 20px;
   }
+
   .poster img {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
   }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
   .details {
     margin-left: 0;
   }
@@ -286,18 +340,22 @@ body {
     gap: 1rem;
     display: none;
   }
+
   .nav-links.active {
     display: flex;
     animation: slideDown 0.3s ease forwards;
   }
+
   .menu-toggle {
     display: none;
   }
+
   .navbar {
     padding: 1rem 2rem;
     flex-wrap: wrap;
     gap: 10px;
   }
+
   .search-bar input {
     width: 100px;
   }
@@ -309,6 +367,7 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

@@ -74,13 +74,14 @@ body {
   background: #222;
   border-radius: 25px;
   padding: 0.4rem 1rem;
+  width: 250px;
 }
 .search-bar input {
   background: transparent;
   border: none;
   color: #fff;
   outline: none;
-  width: 150px;
+  width: 100%;
 }
 
 .search-bar input:active {
@@ -309,6 +310,14 @@ body {
 
   .movie-row {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
   }
 }
 

@@ -31,6 +31,22 @@
     <div class="menu-toggle">☰</div>
   </header>
 
+  <!-- Modal -->
+  <div id="genreModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Select a Movie Genre</h2>
+
+      <div class="genre-spinner">
+        <label for="genres">Choose Genre:</label>
+        <select id="genres">
+        </select>
+      </div>
+
+      <button id="confirmGenre">Confirm</button>
+    </div>
+  </div>
+
   <!-- 🎥 Hero Section -->
   <section class="hero">
     <div class="hero-content">
@@ -110,14 +126,6 @@
     </div>
   </section>
 
-  <script>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
 <script type="module" src="js/scripts.js"></script>
 </body>
 </html>

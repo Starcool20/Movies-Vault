@@ -18,6 +18,7 @@
       <a href="#">Home</a>
       <a href="#">Movies</a>
       <a href="#">Series</a>
+      <a href="#">Genres</a>
     </nav>
 
     <div class="search-bar">
@@ -29,6 +30,22 @@
 
     <div class="menu-toggle">☰</div>
   </header>
+
+  <!-- Modal -->
+  <div id="genreModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Select a Movie Genre</h2>
+
+      <div class="genre-spinner">
+        <label for="genres">Choose Genre:</label>
+        <select id="genres">
+        </select>
+      </div>
+
+      <button id="confirmGenre">Confirm</button>
+    </div>
+  </div>
 
   <!-- Movie Info -->
   <section class="movie-info">

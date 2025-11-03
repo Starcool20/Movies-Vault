@@ -2,7 +2,7 @@ import { getMovieDetails } from "./api/movies/movie-details.js";
 import { getMovieDirectLinks } from "./api/movies/movie-direct-links.js";
 import { getMovieRecommendation } from "./api/movies/movie-recommendation.js";
 import { getMovieSearchKeywords } from "./api/movies/movie-search-keywords.js";
-import { getMovieSearch } from "./api/movies/movie-search.js";
+import { getMovieGenres } from "./api/movies/genres-lists.js";
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -20,6 +20,8 @@ navLinks.forEach(link => {
       window.location.href = "movie-lists.html?type=movies";
     } else if (page === 'Series') {
       alert("Comming Soon");
+    } else if (page === 'Genres') {
+      openGenreModal();
     }
   });
 });
@@ -80,6 +82,7 @@ const movieDetails = await getMovieDetails(query);
 const directLinks = await getMovieDirectLinks(query);
 const recommendationsData = await getMovieRecommendation(query, 1);
 const iframe = document.getElementById("player");
+const genresData = await getMovieGenres();
 document.title = movieDetails ? `${movieDetails.title} - Watch Now` : "Movie Not Found";
 
 function getImageSize() {
@@ -243,4 +246,44 @@ searchInput.addEventListener("keydown", function (event) {
     event.preventDefault();
     window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
   }
+});
+
+const modal = document.getElementById("genreModal");
+const closeBtn = document.querySelector(".close");
+const confirmBtn = document.getElementById("confirmGenre");
+const genreSelect = document.getElementById("genres");
+
+function openGenreModal() {
+  modal.style.display = "block";
+  populateGenreOptions();
+}
+
+function closeGenreModal() {
+  modal.style.display = "none";
+}
+
+function populateGenreOptions() {
+  const option = document.createElement("option");
+  option.value = 0;
+  option.textContent = "Select Genre";
+  genreSelect.appendChild(option);
+  genresData.genres.forEach(genre => {
+    const option = document.createElement("option");
+    option.value = genre.id;
+    option.textContent = genre.name;
+    genreSelect.appendChild(option);
+  });
+}
+
+// Confirm selection
+confirmBtn.addEventListener("click", () => {
+  const selected = genreSelect.value;
+  if (selected && selected != 0) {
+    closeGenreModal();
+    window.location.href = `movie-lists.html?type=genres&genre_id=${selected}`;
+  }
+});
+
+closeBtn.addEventListener("click", () => {
+  closeGenreModal();
 });

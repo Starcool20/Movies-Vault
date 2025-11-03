@@ -42,7 +42,6 @@ const searchValue = getQueryParam("query");
 const TMDB_BASE_URL = "https://image.tmdb.org/t/p/";
 let movieData = null;
 const genresData = await getMovieGenres();
-console.log("Genres Data: ", genresData.genres);
 let page = 1;
 
 switch (query) {
@@ -327,7 +326,6 @@ const modal = document.getElementById("genreModal");
 const closeBtn = document.querySelector(".close");
 const confirmBtn = document.getElementById("confirmGenre");
 const genreSelect = document.getElementById("genres");
-const selectedText = document.getElementById("selectedGenreText");
 
 function openGenreModal() {
   modal.style.display = "block";

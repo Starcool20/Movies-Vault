@@ -23,6 +23,8 @@ navLinks.forEach(link => {
       window.location.href = "movie-lists.html?type=movies";
     } else if (page === 'Series') {
       alert("Comming Soon");
+    } else if (page === 'Genres') {
+      alert("Comming Soon");
     }
   });
 });

@@ -6,9 +6,12 @@ import { getMovieTopRated } from '../js/api/movies/movie-top-rated.js';
 import { getMovieUpcoming } from '../js/api/movies/movie-upcoming.js';
 import { getMovieNowPlaying } from '../js/api/movies/movie-now-playing.js';
 import { getMovies } from './api/movies/movies.js';
+import { getMovieGenres } from './api/movies/genres-lists.js';
+import { getMovieByGenresID } from './api/movies/movie-genres-id.js';
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelectorAll('.nav-links a');
+const navLinksContainer = document.querySelector('.nav-links');
 // Add click listener to each
 navLinks.forEach(link => {
   link.addEventListener('click', event => {
@@ -23,18 +26,23 @@ navLinks.forEach(link => {
       window.location.href = "movie-lists.html?type=movies";
     } else if (page === 'Series') {
       alert("Comming Soon");
+    } else if (page === 'Genres') {
+      openGenreModal();
+      navLinksContainer.classList.toggle("active");
     }
   });
 });
 
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+  navLinksContainer.classList.toggle("active");
 });
 
 const query = getQueryParam('type') || 'popular';
 const searchValue = getQueryParam("query");
 const TMDB_BASE_URL = "https://image.tmdb.org/t/p/";
 let movieData = null;
+const genresData = await getMovieGenres();
+console.log("Genres Data: ", genresData.genres);
 let page = 1;
 
 switch (query) {
@@ -59,6 +67,9 @@ switch (query) {
   case 'search':
     movieData = await getMovieSearch(searchValue, "1");
     break
+  case 'genres':
+    movieData = await getMovieByGenresID(getQueryParam('genre_id'), '1');
+    break;
   default:
     movieData = await getMoviePopular('1');
     break;
@@ -295,6 +306,9 @@ document.addEventListener("click", (e) => {
   if (!searchInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
     suggestionsContainer.style.display = "none";
   }
+  if (e.target == modal) {
+    closeGenreModal();
+  }
 });
 
 document.querySelector(".search-bar button").addEventListener("click", event => {
@@ -307,4 +321,45 @@ searchInput.addEventListener("keydown", function (event) {
     event.preventDefault();
     window.location.href = "movie-lists.html?type=search&query=" + searchInput.value.toLowerCase();
   }
+});
+
+const modal = document.getElementById("genreModal");
+const closeBtn = document.querySelector(".close");
+const confirmBtn = document.getElementById("confirmGenre");
+const genreSelect = document.getElementById("genres");
+const selectedText = document.getElementById("selectedGenreText");
+
+function openGenreModal() {
+  modal.style.display = "block";
+  populateGenreOptions();
+}
+
+function closeGenreModal() {
+  modal.style.display = "none";
+}
+
+function populateGenreOptions() {
+  const option = document.createElement("option");
+  option.value = 0;
+  option.textContent = "Select Genre";
+  genreSelect.appendChild(option);
+  genresData.genres.forEach(genre => {
+    const option = document.createElement("option");
+    option.value = genre.id;
+    option.textContent = genre.name;
+    genreSelect.appendChild(option);
+  });
+}
+
+// Confirm selection
+confirmBtn.addEventListener("click", () => {
+  const selected = genreSelect.value;
+  if (selected && selected != 0) {
+    closeGenreModal();
+    window.location.href = `movie-lists.html?type=genres&genre_id=${selected}`;
+  }
+});
+
+closeBtn.addEventListener("click", () => {
+  closeGenreModal();
 });

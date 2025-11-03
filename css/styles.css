@@ -30,6 +30,7 @@ body {
   font-weight: 700;
   color: #e50914;
 }
+
 .logo span {
   color: #fff;
 }
@@ -40,12 +41,14 @@ body {
   align-items: center;
   gap: 1.5rem;
 }
+
 .nav-links a {
   color: #ccc;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
   color: #e50914;
 }
@@ -63,6 +66,7 @@ body {
   font-weight: 700;
   color: #e50914;
 }
+
 .logo span {
   color: #fff;
 }
@@ -76,6 +80,7 @@ body {
   padding: 0.4rem 1rem;
   width: 250px;
 }
+
 .search-bar input {
   background: transparent;
   border: none;
@@ -90,6 +95,7 @@ body {
   color: #fff;
   outline: none;
 }
+
 .search-bar button {
   background: none;
   border: none;
@@ -101,16 +107,20 @@ body {
 /* Search suggestions dropdown */
 .suggestions {
   position: absolute;
-  top: 55px; /* space above */
-  right: 0; /* align to the right of the parent container */
+  top: 55px;
+  /* space above */
+  right: 0;
+  /* align to the right of the parent container */
   background: #222;
   border-radius: 8px;
-  width: 300px; /* match input width or adjust as needed */
+  width: 300px;
+  /* match input width or adjust as needed */
   color: #fff;
-  display: none; /* hide by default */
+  display: none;
+  /* hide by default */
   max-height: 300px;
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 100;
   padding: 4px 0;
 }
@@ -132,7 +142,6 @@ body {
   margin-left: 1rem;
 }
 
-/* Hamburger (Mobile Menu) */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -149,11 +158,12 @@ body {
   padding-left: 4rem;
   position: relative;
 }
+
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
 }
 
 .hero-content {
@@ -161,10 +171,12 @@ body {
   max-width: 500px;
   z-index: 1;
 }
+
 .hero-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
 .hero-content .tags span {
   background: #e50914;
   padding: 0.3rem 0.8rem;
@@ -172,11 +184,13 @@ body {
   border-radius: 4px;
   font-size: 0.8rem;
 }
+
 .hero-content p {
   margin: 1rem 0;
   line-height: 1.4;
   color: #ccc;
 }
+
 .hero-buttons .btn-primary,
 .hero-buttons .btn-secondary {
   padding: 0.8rem 1.5rem;
@@ -185,11 +199,13 @@ body {
   font-weight: bold;
   margin-right: 1rem;
 }
+
 .hero-buttons .btn-primary {
   background: #e50914;
   border: none;
   color: #fff;
 }
+
 .hero-buttons .btn-secondary {
   background: transparent;
   border: 1px solid #fff;
@@ -200,33 +216,42 @@ body {
 .section {
   padding: 2rem 3rem;
 }
+
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .section-header a {
   color: #e50914;
   text-decoration: none;
 }
 
 .movie-row {
-  display: flex;            /* make children align horizontally */
-  gap: 1rem;                /* spacing between cards */
-  overflow-x: auto;         /* enable horizontal scroll */
-  padding-bottom: 1rem;     /* optional spacing for scrollbar */
-  scroll-behavior: smooth;  /* smooth scroll when programmatically scrolling */
+  display: flex;
+  /* make children align horizontally */
+  gap: 1rem;
+  /* spacing between cards */
+  overflow-x: auto;
+  /* enable horizontal scroll */
+  padding-bottom: 1rem;
+  /* optional spacing for scrollbar */
+  scroll-behavior: smooth;
+  /* smooth scroll when programmatically scrolling */
 }
 
 /* Optional: hide scrollbar in webkit browsers */
 .movie-row::-webkit-scrollbar {
   height: 6px;
 }
+
 .movie-row::-webkit-scrollbar-thumb {
   background: #e50914;
   border-radius: 3px;
 }
+
 .movie-row::-webkit-scrollbar-track {
   background: #222;
 }
@@ -243,18 +268,20 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease, background 0.3s ease;
-  flex: 0 0 auto;  /* prevents shrinking, keeps fixed width */
-  width: 250px;     /* fixed width for each card */
+  flex: 0 0 auto;
+  /* prevents shrinking, keeps fixed width */
+  width: 250px;
+  /* fixed width for each card */
 }
+
 .movie-card:hover {
   transform: scale(1.05);
   background: #e50914;
 }
+
 .movie-card.small {
   height: 150px;
 }
-
-/* 📱 Responsive Design */
 
 /* Tablets */
 @media (max-width: 992px) {
@@ -275,7 +302,7 @@ body {
 /* Mobile Devices */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: none;
+    display: flex;
   }
 
   .hero {
@@ -313,7 +340,7 @@ body {
   }
 
   .search-bar {
-    width: 100%;
+    width: 85%;
   }
 
   .search-bar input {
@@ -339,6 +366,7 @@ body {
   font-weight: 700;
   color: #e50914;
 }
+
 .logo span {
   color: #fff;
 }
@@ -363,7 +391,6 @@ body {
 
 /* 🍔 Hamburger icon (hidden on desktop) */
 .menu-toggle {
-  display: none;
   font-size: 1.8rem;
   cursor: pointer;
   color: #fff;
@@ -371,9 +398,7 @@ body {
 
 /* 📱 Responsive behavior */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
+  .menu-toggle {}
 
   .nav-links {
     position: absolute;
@@ -404,6 +429,7 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

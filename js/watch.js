@@ -172,7 +172,6 @@ function populateMovieInfo(movie) {
     <li><b>Genre:</b> ${fullGenres}</li>
     <li><b>Release Date:</b> ${releaseDate}</li>
     <li><b>Production:</b> ${production}</li>
-    <li><b>Cast:</b> ${cast}</li>
   `;
 
   // Optional: Show “Add to Favourites” if user is logged in

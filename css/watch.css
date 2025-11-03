@@ -248,6 +248,12 @@ body {
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #e50914;
 }
 
 .card img {
@@ -356,8 +362,12 @@ body {
     gap: 10px;
   }
 
+  .search-bar {
+    width: 100%;
+  }
+
   .search-bar input {
-    width: 100px;
+    width: 100%;
   }
 }
 

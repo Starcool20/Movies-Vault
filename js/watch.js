@@ -118,6 +118,9 @@ function populateMovieInfo(movie) {
     .map((g) => `<span>${g.name}</span>`)
     .join("");
 
+    // 📅 Format release year
+  const overview = movie.overview || "N/A";
+
   // 🕒 Format runtime (if available)
   const runtime = movie.runtime
     ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`
@@ -161,6 +164,7 @@ function populateMovieInfo(movie) {
 
   // 📝 Populate info list
   listEl.innerHTML = `
+    <li><b>Overview:</b> ${overview}</li>
     <li><b>Year:</b> ${releaseYear}</li>
     <li><b>Runtime:</b> ${runtime}</li>
     <li><b>Rating:</b> ⭐ ${rating}</li>

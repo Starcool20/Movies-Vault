@@ -211,6 +211,12 @@ async function getNextMoviePage() {
       loadMorePill.classList.remove("loading");
       loadMorePill.innerHTML = "⟳ Load More";
       break
+    case 'genres':
+      movieData = await getMovieByGenresID(getQueryParam('genre_id'), page.toString());
+      appendMovies(movieData);
+      loadMorePill.disabled = false;
+      loadMorePill.classList.remove("loading");
+      loadMorePill.innerHTML = "⟳ Load More";
     default:
       movieData = await getMoviePopular(page.toString());
       appendMovies(movieData);
